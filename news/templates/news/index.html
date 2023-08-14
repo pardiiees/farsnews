@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه خوش آمدید</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: linear-gradient(to bottom, #663399, #8a3ab9);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #000;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div class="container">
+        <h1>خوش آمدید!</h1>
+        <p>به صفحه‌ی خبرگزاری فارس خوش آمدید.<br><br> اینجا می‌توانید آخرین اخبار و رویدادها را مشاهده کنید. <br>از این پلتفرم برای ارتباط با مخاطبانتان استفاده کنید و تازه‌ترین اخبار را به سرعت منتشر کنید.</p>
+        <p>تازه ترین اخبار امروز به شرح زیر است :</p>
+        <table>
+            <tr>
+                <th>عنوان</th>
+                <th>تیتر</th>
+            </tr>
+            {% for n in khabar %}
+            <tr>
+                <td>{{ n.onvan }}</td>
+                <td>{{ n.titr }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
